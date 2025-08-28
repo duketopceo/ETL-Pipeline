@@ -1,9 +1,14 @@
 -- ===================================================================================
--- BigQuery Transformation Script for RoofLink Data
+-- BigQuery Transformation Script for RoofLink Data (V2)
 -- ===================================================================================
 -- This script is designed to run in Google BigQuery. It mirrors the logic
 -- from the Python ETL pipeline (etl_pipeline_logic.py) to transform raw
--- RoofLink CSV data into a cleaned, structured table.
+-- RoofLink CSV data into a cleaned, structured table suitable for Looker.
+
+-- V2 Changes:
+-- - More conservative missing data handling (fewer COALESCE calls).
+-- - Added `is_complete` flag to identify high-quality records.
+-- - Added calculated fields (`customer_full_name`, `is_insurance_claim`, `job_duration_days`).
 
 -- Instructions:
 -- 1. Load your raw CSV data into a BigQuery table. For this script, we assume
@@ -12,12 +17,8 @@
 -- 3. Run the CREATE OR REPLACE TABLE statement below.
 
 -- ===================================================================================
--- Step 1: Define the Cleaned Table Structure
+-- Step 1: Define the Cleaned Table Structure (V2)
 -- ===================================================================================
--- This statement creates the final table with a clean schema. Column names are
--- standardized to snake_case, and data types are explicitly set.
--- Note: Some columns from the raw data might be dropped if they are mostly empty.
--- This schema represents the expected final structure.
 
 CREATE OR REPLACE TABLE `your_project.your_dataset.rooflink_cleaned_data`
 (
@@ -40,7 +41,7 @@ CREATE OR REPLACE TABLE `your_project.your_dataset.rooflink_cleaned_data`
   customer_marketing_rep STRING,
   customer_lead_source STRING,
 
-  -- Job/Address Information (can sometimes be duplicates of customer info)
+  -- Job/Address Information
   address STRING,
   city STRING,
   state STRING,
@@ -75,29 +76,37 @@ CREATE OR REPLACE TABLE `your_project.your_dataset.rooflink_cleaned_data`
   insurance_company_claims_email STRING,
   claim_handler_name STRING,
   claim_handler_phone STRING,
-  claim_handler_email STRING
+  claim_handler_email STRING,
+
+  -- V2 Calculated Fields for Looker
+  is_complete BOOL OPTIONS(description="Flag to indicate if a row has all critical customer info (job_id, name, address)."),
+  customer_full_name STRING OPTIONS(description="Combination of customer_first_name and customer_last_name."),
+  is_insurance_claim BOOL OPTIONS(description="Flag to indicate if the job is an insurance claim."),
+  job_duration_days INT64 OPTIONS(description="Number of days from job creation to completion.")
 );
 
 -- ===================================================================================
--- Step 2: Transform and Insert Data
+-- Step 2: Transform and Insert Data (V2)
 -- ===================================================================================
--- This statement reads from the raw table, applies all the cleaning logic,
--- and inserts the result into our new cleaned table.
 
 INSERT INTO `your_project.your_dataset.rooflink_cleaned_data`
 WITH
   -- CTE 1: Extract Job ID and perform initial data type casting
-  -- Note: BigQuery replaces unsupported characters like '/' in column names with underscores.
-  -- The names used here (`Customer___First_name`) assume the raw CSV was loaded directly.
   RawDataCasted AS (
     SELECT
       -- Extract the number from the URL to create job_id
-      CAST(REGEXP_EXTRACT(`Full_url`, r'(\d+)') AS INT64) AS job_id,
+      SAFE_CAST(REGEXP_EXTRACT(`Full_url`, r'(\\d+)') AS INT64) AS job_id,
 
-      -- These are the raw column names from the CSV
+      -- Cast all other relevant columns, keeping them as close to raw as possible
       `Customer___First_name` AS customer_first_name,
       `Customer___Last_name` AS customer_last_name,
       `Customer___Address` AS customer_address,
+      `Address` AS address, -- Note: There are two address fields, we keep both
+      SAFE.PARSE_DATETIME('%m/%d/%Y %I:%M%p', `Date_created`) AS date_created,
+      SAFE.PARSE_DATETIME('%m/%d/%Y %I:%M%p', `Date_completed`) AS date_completed,
+      `Insurance_company___Name` AS insurance_company_name,
+
+      -- All other columns needed for the final table
       `Customer___City` AS customer_city,
       `Customer___State` AS customer_state,
       `Customer___Zipcode` AS customer_zipcode,
@@ -109,17 +118,14 @@ WITH
       `Customer___Alt_rep` AS customer_alt_rep,
       `Customer___Marketing_rep` AS customer_marketing_rep,
       `Customer___Lead_source` AS customer_lead_source,
-      `Address` AS address,
       `City` AS city,
       `State` AS state,
       `Zipcode` AS zipcode,
       `Status_label` AS status_label,
       `Lead_status_label` AS lead_status_label,
-      SAFE.PARSE_DATETIME('%m/%d/%Y %I:%M%p', `Date_created`) AS date_created,
       SAFE.PARSE_DATETIME('%m/%d/%Y %I:%M%p', `Date_approved`) AS date_approved,
       SAFE.PARSE_DATETIME('%m/%d/%Y %I:%M%p', `Date_signed`) AS date_signed,
       SAFE.PARSE_DATETIME('%m/%d/%Y %I:%M%p', `Date_rd_released`) AS date_rd_released,
-      SAFE.PARSE_DATETIME('%m/%d/%Y %I:%M%p', `Date_completed`) AS date_completed,
       SAFE.PARSE_DATETIME('%m/%d/%Y %I:%M%p', `Date_roof_completed`) AS date_roof_completed,
       SAFE.PARSE_DATETIME('%m/%d/%Y %I:%M%p', `Date_closed`) AS date_closed,
       SAFE.PARSE_DATETIME('%m/%d/%Y %I:%M%p', `Estimate___Date_last_edited`) AS estimate_date_last_edited,
@@ -129,7 +135,6 @@ WITH
       SAFE_CAST(`Estimate___Total` AS FLOAT64) AS estimate_total,
       `Roofing_crew` AS roofing_crew,
       `Last_note_message` AS last_note_message,
-      `Insurance_company___Name` AS insurance_company_name,
       `Insurance_company___Claims_phone` AS insurance_company_claims_phone,
       `Insurance_company___Claims_extension` AS insurance_company_claims_extension,
       `Insurance_company___Claims_email` AS insurance_company_claims_email,
@@ -137,46 +142,60 @@ WITH
       `Claim_handler___Phone` AS claim_handler_phone,
       `Claim_handler___Email` AS claim_handler_email,
 
-      -- Keep the original row to calculate a unique hash for duplicate detection
       TO_JSON_STRING(t) AS original_row
     FROM
       `your_project.your_dataset.rooflink_raw_data` AS t
   ),
 
-  -- CTE 2: Handle missing values and remove duplicates
-  CleanedAndDeduplicated AS (
-    SELECT
-      *,
-      -- Assign a row number to each row, partitioned by job_id.
-      -- Order by the hash of the original row to ensure consistent tie-breaking.
+  -- CTE 2: Remove duplicates based on job_id
+  Deduplicated AS (
+    SELECT *,
       ROW_NUMBER() OVER (PARTITION BY job_id ORDER BY FARM_FINGERPRINT(original_row)) as rn
     FROM RawDataCasted
-    WHERE job_id IS NOT NULL -- Exclude rows where a job_id could not be extracted
+    WHERE job_id IS NOT NULL
+  ),
+
+  -- CTE 3: Apply final transformations and calculated fields
+  FinalCalculations AS (
+    SELECT
+        *,
+        -- is_complete Flag
+        (job_id IS NOT NULL AND customer_first_name IS NOT NULL AND customer_last_name IS NOT NULL AND address IS NOT NULL) AS is_complete,
+
+        -- customer_full_name
+        TRIM(CONCAT(COALESCE(customer_first_name, ''), ' ', COALESCE(customer_last_name, ''))) AS customer_full_name,
+
+        -- is_insurance_claim Flag
+        (insurance_company_name IS NOT NULL AND insurance_company_name != 'Unknown') AS is_insurance_claim,
+
+        -- job_duration_days
+        DATE_DIFF(date_completed, date_created, DAY) AS job_duration_days
+
+    FROM Deduplicated
+    WHERE rn = 1
   )
 
--- Final SELECT statement
--- Select only the first instance of each job_id (rn = 1)
+-- Final SELECT statement with conservative COALESCE
 SELECT
   job_id,
-  -- Use COALESCE to fill missing values, similar to the Python script's fillna logic
-  COALESCE(customer_first_name, 'Unknown') AS customer_first_name,
-  COALESCE(customer_last_name, 'Unknown') AS customer_last_name,
-  COALESCE(customer_address, 'Unknown') AS customer_address,
-  COALESCE(customer_city, 'Unknown') AS customer_city,
-  COALESCE(customer_state, 'Unknown') AS customer_state,
-  COALESCE(customer_zipcode, 'Unknown') AS customer_zipcode,
-  COALESCE(customer_phone, 'Unknown') AS customer_phone,
-  COALESCE(customer_cell, 'Unknown') AS customer_cell,
-  COALESCE(customer_email, 'Unknown') AS customer_email,
+  customer_first_name,
+  customer_last_name,
+  customer_address,
+  customer_city,
+  customer_state,
+  customer_zipcode,
+  customer_phone,
+  customer_cell,
+  customer_email,
   COALESCE(customer_region, 'Unknown') AS customer_region,
   COALESCE(customer_rep, 'Unknown') AS customer_rep,
-  COALESCE(customer_alt_rep, 'Unknown') AS customer_alt_rep,
-  COALESCE(customer_marketing_rep, 'Unknown') AS customer_marketing_rep,
+  customer_alt_rep,
+  customer_marketing_rep,
   COALESCE(customer_lead_source, 'Unknown') AS customer_lead_source,
-  COALESCE(address, 'Unknown') AS address,
-  COALESCE(city, 'Unknown') AS city,
-  COALESCE(state, 'Unknown') AS state,
-  COALESCE(zipcode, 'Unknown') AS zipcode,
+  address,
+  city,
+  state,
+  zipcode,
   COALESCE(status_label, 'Unknown') AS status_label,
   COALESCE(lead_status_label, 'Unknown') AS lead_status_label,
   date_created,
@@ -187,19 +206,22 @@ SELECT
   date_roof_completed,
   date_closed,
   estimate_date_last_edited,
-  -- For numeric, we can fill with 0 or a median value if known. Here we use 0.
-  COALESCE(estimate_gt_margin, 0) AS estimate_gt_margin,
-  COALESCE(estimate_estimate_gross_margin, 0) AS estimate_estimate_gross_margin,
-  COALESCE(estimate_owes, 0) AS estimate_owes,
-  COALESCE(estimate_total, 0) AS estimate_total,
-  COALESCE(roofing_crew, 'Unknown') AS roofing_crew,
-  COALESCE(last_note_message, 'None') AS last_note_message,
-  COALESCE(insurance_company_name, 'Unknown') AS insurance_company_name,
-  COALESCE(insurance_company_claims_phone, 'Unknown') AS insurance_company_claims_phone,
-  COALESCE(insurance_company_claims_extension, 'Unknown') AS insurance_company_claims_extension,
-  COALESCE(insurance_company_claims_email, 'Unknown') AS insurance_company_claims_email,
-  COALESCE(claim_handler_name, 'Unknown') AS claim_handler_name,
-  COALESCE(claim_handler_phone, 'Unknown') AS claim_handler_phone,
-  COALESCE(claim_handler_email, 'Unknown') AS claim_handler_email
-FROM CleanedAndDeduplicated
-WHERE rn = 1;
+  estimate_gt_margin,
+  estimate_estimate_gross_margin,
+  estimate_owes,
+  estimate_total,
+  roofing_crew,
+  last_note_message,
+  insurance_company_name,
+  insurance_company_claims_phone,
+  insurance_company_claims_extension,
+  insurance_company_claims_email,
+  claim_handler_name,
+  claim_handler_phone,
+  claim_handler_email,
+  -- New V2 Fields
+  is_complete,
+  customer_full_name,
+  is_insurance_claim,
+  job_duration_days
+FROM FinalCalculations;
