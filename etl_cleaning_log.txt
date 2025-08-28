@@ -1,0 +1,718 @@
+2025-08-28 02:31:00,670 - INFO - ASSESSING: boise_2024_data_raw.csv
+2025-08-28 02:31:00,750 - INFO - ASSESSING: slc_data_partone_2024.csv
+2025-08-28 02:31:00,762 - INFO - ASSESSING: slc_data_parttwo_2024.csv
+2025-08-28 02:31:00,784 - INFO - ============================================================
+2025-08-28 02:31:00,784 - INFO - STARTING DATA CLEANING FOR: boise_2024_data_raw.csv
+2025-08-28 02:31:00,784 - INFO - ============================================================
+2025-08-28 02:31:00,784 - INFO - STEP 1: Loading data from file...
+2025-08-28 02:31:00,808 - INFO - ✅ Loaded 1585 raw rows from boise_2024_data_raw.csv.
+2025-08-28 02:31:00,808 - INFO - STEP 2: Removing summary rows from data...
+2025-08-28 02:31:00,870 - INFO - ✅ Found and removed 10 summary/header rows.
+2025-08-28 02:31:00,872 - INFO - STEP 3: Standardizing column names...
+2025-08-28 02:31:00,873 - INFO - ✅ Column names standardized.
+2025-08-28 02:31:00,873 - INFO - STEP 4: Extracting and validating Job ID...
+2025-08-28 02:31:00,873 - INFO - Found URL column: 'full_url'. Extracting job_id.
+2025-08-28 02:31:00,880 - INFO - ✅ Successfully extracted 1575 job IDs.
+2025-08-28 02:31:00,880 - INFO - STEP 5: Handling missing values...
+2025-08-28 02:31:00,881 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2914623.
+2025-08-28 02:31:00,882 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2832809.
+2025-08-28 02:31:00,882 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2822756.
+2025-08-28 02:31:00,882 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2742738.
+2025-08-28 02:31:00,882 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2741103.
+2025-08-28 02:31:00,882 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2739497.
+2025-08-28 02:31:00,882 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2648246.
+2025-08-28 02:31:00,882 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2557219.
+2025-08-28 02:31:00,883 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2550247.
+2025-08-28 02:31:00,883 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2492720.
+2025-08-28 02:31:00,883 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2434768.
+2025-08-28 02:31:00,883 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2234282.
+2025-08-28 02:31:00,883 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2033517.
+2025-08-28 02:31:00,883 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2022167.
+2025-08-28 02:31:00,883 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1912329.
+2025-08-28 02:31:00,884 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1910303.
+2025-08-28 02:31:00,884 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1873549.
+2025-08-28 02:31:00,884 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1832602.
+2025-08-28 02:31:00,884 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1816838.
+2025-08-28 02:31:00,885 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3316819.
+2025-08-28 02:31:00,885 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3311130.
+2025-08-28 02:31:00,885 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3289453.
+2025-08-28 02:31:00,886 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3250696.
+2025-08-28 02:31:00,886 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3247489.
+2025-08-28 02:31:00,886 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3234293.
+2025-08-28 02:31:00,886 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3206234.
+2025-08-28 02:31:00,886 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3199159.
+2025-08-28 02:31:00,886 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3199153.
+2025-08-28 02:31:00,886 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3199068.
+2025-08-28 02:31:00,887 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3178516.
+2025-08-28 02:31:00,887 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3178041.
+2025-08-28 02:31:00,887 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3177049.
+2025-08-28 02:31:00,887 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3167421.
+2025-08-28 02:31:00,887 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3163619.
+2025-08-28 02:31:00,887 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3163520.
+2025-08-28 02:31:00,887 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3162607.
+2025-08-28 02:31:00,888 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3149606.
+2025-08-28 02:31:00,888 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3138933.
+2025-08-28 02:31:00,888 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3137014.
+2025-08-28 02:31:00,888 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3127230.
+2025-08-28 02:31:00,888 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3105164.
+2025-08-28 02:31:00,888 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3091808.
+2025-08-28 02:31:00,888 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3034778.
+2025-08-28 02:31:00,888 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3017370.
+2025-08-28 02:31:00,889 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3011984.
+2025-08-28 02:31:00,889 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3008356.
+2025-08-28 02:31:00,889 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 3003665.
+2025-08-28 02:31:00,889 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2977857.
+2025-08-28 02:31:00,889 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2929307.
+2025-08-28 02:31:00,889 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2922363.
+2025-08-28 02:31:00,889 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2913702.
+2025-08-28 02:31:00,890 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2904949.
+2025-08-28 02:31:00,890 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2900098.
+2025-08-28 02:31:00,890 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2854866.
+2025-08-28 02:31:00,890 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2847317.
+2025-08-28 02:31:00,890 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2847217.
+2025-08-28 02:31:00,890 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2832809.
+2025-08-28 02:31:00,890 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2822988.
+2025-08-28 02:31:00,891 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2822780.
+2025-08-28 02:31:00,891 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2741103.
+2025-08-28 02:31:00,891 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2739497.
+2025-08-28 02:31:00,891 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2729025.
+2025-08-28 02:31:00,891 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2654044.
+2025-08-28 02:31:00,891 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2654014.
+2025-08-28 02:31:00,891 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2648246.
+2025-08-28 02:31:00,891 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2613222.
+2025-08-28 02:31:00,892 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2547224.
+2025-08-28 02:31:00,892 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2492720.
+2025-08-28 02:31:00,892 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2445007.
+2025-08-28 02:31:00,892 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2426951.
+2025-08-28 02:31:00,892 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2423510.
+2025-08-28 02:31:00,892 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2423505.
+2025-08-28 02:31:00,892 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2415037.
+2025-08-28 02:31:00,893 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2414634.
+2025-08-28 02:31:00,893 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2360216.
+2025-08-28 02:31:00,893 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2360161.
+2025-08-28 02:31:00,893 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2342734.
+2025-08-28 02:31:00,893 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2320672.
+2025-08-28 02:31:00,893 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2320496.
+2025-08-28 02:31:00,894 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2278799.
+2025-08-28 02:31:00,894 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2234282.
+2025-08-28 02:31:00,894 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2230656.
+2025-08-28 02:31:00,894 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2230018.
+2025-08-28 02:31:00,894 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2229822.
+2025-08-28 02:31:00,894 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2218873.
+2025-08-28 02:31:00,894 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2193649.
+2025-08-28 02:31:00,894 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2166644.
+2025-08-28 02:31:00,895 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2141353.
+2025-08-28 02:31:00,895 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2022167.
+2025-08-28 02:31:00,895 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1912329.
+2025-08-28 02:31:00,895 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1902233.
+2025-08-28 02:31:00,895 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1832602.
+2025-08-28 02:31:00,895 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1816838.
+2025-08-28 02:31:00,895 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1724700.
+2025-08-28 02:31:00,897 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 3107301.
+2025-08-28 02:31:00,897 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 3034778.
+2025-08-28 02:31:00,897 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 3017127.
+2025-08-28 02:31:00,897 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 3011984.
+2025-08-28 02:31:00,897 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 3003665.
+2025-08-28 02:31:00,898 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2979204.
+2025-08-28 02:31:00,898 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2947384.
+2025-08-28 02:31:00,898 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2906197.
+2025-08-28 02:31:00,898 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2904949.
+2025-08-28 02:31:00,898 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2863569.
+2025-08-28 02:31:00,898 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2863473.
+2025-08-28 02:31:00,898 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2863324.
+2025-08-28 02:31:00,898 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2847416.
+2025-08-28 02:31:00,899 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846465.
+2025-08-28 02:31:00,899 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846435.
+2025-08-28 02:31:00,899 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846370.
+2025-08-28 02:31:00,899 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846299.
+2025-08-28 02:31:00,899 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846262.
+2025-08-28 02:31:00,899 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846244.
+2025-08-28 02:31:00,899 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846228.
+2025-08-28 02:31:00,900 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846201.
+2025-08-28 02:31:00,900 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846175.
+2025-08-28 02:31:00,900 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846163.
+2025-08-28 02:31:00,900 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846112.
+2025-08-28 02:31:00,900 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846100.
+2025-08-28 02:31:00,900 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846065.
+2025-08-28 02:31:00,900 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2846039.
+2025-08-28 02:31:00,900 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2845889.
+2025-08-28 02:31:00,901 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2845146.
+2025-08-28 02:31:00,901 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2845112.
+2025-08-28 02:31:00,901 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2841509.
+2025-08-28 02:31:00,901 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2832445.
+2025-08-28 02:31:00,901 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2820461.
+2025-08-28 02:31:00,901 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2816911.
+2025-08-28 02:31:00,902 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2751576.
+2025-08-28 02:31:00,902 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2744129.
+2025-08-28 02:31:00,902 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2741411.
+2025-08-28 02:31:00,902 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2733005.
+2025-08-28 02:31:00,902 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2732984.
+2025-08-28 02:31:00,902 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2732866.
+2025-08-28 02:31:00,902 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2729761.
+2025-08-28 02:31:00,902 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2729025.
+2025-08-28 02:31:00,903 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2719524.
+2025-08-28 02:31:00,903 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2719096.
+2025-08-28 02:31:00,903 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2701942.
+2025-08-28 02:31:00,903 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2701922.
+2025-08-28 02:31:00,903 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2689355.
+2025-08-28 02:31:00,903 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2684673.
+2025-08-28 02:31:00,903 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2680702.
+2025-08-28 02:31:00,903 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2667616.
+2025-08-28 02:31:00,904 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2654044.
+2025-08-28 02:31:00,904 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2654014.
+2025-08-28 02:31:00,904 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2652763.
+2025-08-28 02:31:00,904 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2648246.
+2025-08-28 02:31:00,904 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2637868.
+2025-08-28 02:31:00,904 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2637866.
+2025-08-28 02:31:00,904 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2626492.
+2025-08-28 02:31:00,905 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2626193.
+2025-08-28 02:31:00,905 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2622530.
+2025-08-28 02:31:00,905 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2622525.
+2025-08-28 02:31:00,905 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2614478.
+2025-08-28 02:31:00,905 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2613584.
+2025-08-28 02:31:00,905 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2613222.
+2025-08-28 02:31:00,905 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2595434.
+2025-08-28 02:31:00,906 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2594249.
+2025-08-28 02:31:00,906 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2593168.
+2025-08-28 02:31:00,906 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2573694.
+2025-08-28 02:31:00,906 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2517397.
+2025-08-28 02:31:00,906 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2506410.
+2025-08-28 02:31:00,906 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2504076.
+2025-08-28 02:31:00,906 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2499191.
+2025-08-28 02:31:00,906 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2478990.
+2025-08-28 02:31:00,907 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2469472.
+2025-08-28 02:31:00,907 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2463783.
+2025-08-28 02:31:00,907 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2454937.
+2025-08-28 02:31:00,907 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2449501.
+2025-08-28 02:31:00,907 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2449326.
+2025-08-28 02:31:00,907 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2442531.
+2025-08-28 02:31:00,907 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2423551.
+2025-08-28 02:31:00,907 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2423512.
+2025-08-28 02:31:00,908 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2423510.
+2025-08-28 02:31:00,908 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2423505.
+2025-08-28 02:31:00,908 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2423502.
+2025-08-28 02:31:00,908 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2411322.
+2025-08-28 02:31:00,908 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2411240.
+2025-08-28 02:31:00,908 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2408246.
+2025-08-28 02:31:00,908 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2365797.
+2025-08-28 02:31:00,908 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2365075.
+2025-08-28 02:31:00,909 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2360216.
+2025-08-28 02:31:00,909 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2360161.
+2025-08-28 02:31:00,909 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2348781.
+2025-08-28 02:31:00,909 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2344330.
+2025-08-28 02:31:00,909 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2335361.
+2025-08-28 02:31:00,909 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2332166.
+2025-08-28 02:31:00,909 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2321320.
+2025-08-28 02:31:00,910 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2315292.
+2025-08-28 02:31:00,910 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2301391.
+2025-08-28 02:31:00,910 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2301064.
+2025-08-28 02:31:00,910 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2298591.
+2025-08-28 02:31:00,910 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2278972.
+2025-08-28 02:31:00,910 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2278876.
+2025-08-28 02:31:00,910 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2278874.
+2025-08-28 02:31:00,911 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2278871.
+2025-08-28 02:31:00,911 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2278870.
+2025-08-28 02:31:00,911 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2278811.
+2025-08-28 02:31:00,911 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2278808.
+2025-08-28 02:31:00,911 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2278801.
+2025-08-28 02:31:00,911 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2278799.
+2025-08-28 02:31:00,911 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2278798.
+2025-08-28 02:31:00,911 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2275252.
+2025-08-28 02:31:00,912 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2257833.
+2025-08-28 02:31:00,912 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2240873.
+2025-08-28 02:31:00,912 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2240751.
+2025-08-28 02:31:00,912 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2230925.
+2025-08-28 02:31:00,912 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2230656.
+2025-08-28 02:31:00,912 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2230404.
+2025-08-28 02:31:00,912 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2229822.
+2025-08-28 02:31:00,913 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2226862.
+2025-08-28 02:31:00,913 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2219372.
+2025-08-28 02:31:00,913 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2218873.
+2025-08-28 02:31:00,913 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2217510.
+2025-08-28 02:31:00,913 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2212027.
+2025-08-28 02:31:00,913 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2211551.
+2025-08-28 02:31:00,913 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2193649.
+2025-08-28 02:31:00,914 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2193381.
+2025-08-28 02:31:00,914 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2150596.
+2025-08-28 02:31:00,914 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2141353.
+2025-08-28 02:31:00,914 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2086305.
+2025-08-28 02:31:00,914 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2080940.
+2025-08-28 02:31:00,914 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2072776.
+2025-08-28 02:31:00,914 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2064605.
+2025-08-28 02:31:00,914 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2029897.
+2025-08-28 02:31:00,915 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2026130.
+2025-08-28 02:31:00,915 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 1977926.
+2025-08-28 02:31:00,915 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 1900377.
+2025-08-28 02:31:00,915 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 1890639.
+2025-08-28 02:31:00,917 - WARNING - Dropped column 'estimate' due to >90% missing values.
+2025-08-28 02:31:00,931 - WARNING - Dropped column 'customer_alt_rep' due to >90% missing values.
+2025-08-28 02:31:00,937 - WARNING - Dropped column 'date_approved' due to >90% missing values.
+2025-08-28 02:31:00,939 - WARNING - Dropped column 'date_rd_released' due to >90% missing values.
+2025-08-28 02:31:00,941 - WARNING - Dropped column 'date_completed' due to >90% missing values.
+2025-08-28 02:31:00,942 - WARNING - Dropped column 'date_roof_completed' due to >90% missing values.
+2025-08-28 02:31:00,943 - WARNING - Dropped column 'roofing_crew' due to >90% missing values.
+2025-08-28 02:31:00,946 - WARNING - Dropped column 'date_closed' due to >90% missing values.
+2025-08-28 02:31:00,950 - WARNING - Dropped column 'insurance_company_claims_extension' due to >90% missing values.
+2025-08-28 02:31:00,952 - WARNING - Dropped column 'claim_handler_name' due to >90% missing values.
+2025-08-28 02:31:00,954 - WARNING - Dropped column 'claim_handler_phone' due to >90% missing values.
+2025-08-28 02:31:00,955 - WARNING - Dropped column 'claim_handler_email' due to >90% missing values.
+2025-08-28 02:31:00,955 - INFO - ✅ Missing values handled.
+2025-08-28 02:31:00,955 - INFO - STEP 6: Optimizing data types...
+2025-08-28 02:31:01,158 - INFO - ✅ Data types optimized.
+2025-08-28 02:31:01,158 - INFO - STEP 7: Removing duplicate rows...
+2025-08-28 02:31:01,168 - INFO - ✅ Duplicate removal complete.
+2025-08-28 02:31:01,168 - INFO - ============================================================
+2025-08-28 02:31:01,168 - INFO - CLEANING COMPLETE for boise_2024_data_raw.csv. Final shape: (1575, 31)
+2025-08-28 02:31:01,168 - INFO - ============================================================
+2025-08-28 02:31:01,169 - INFO - ============================================================
+2025-08-28 02:31:01,169 - INFO - STARTING DATA CLEANING FOR: slc_data_partone_2024.csv
+2025-08-28 02:31:01,169 - INFO - ============================================================
+2025-08-28 02:31:01,169 - INFO - STEP 1: Loading data from file...
+2025-08-28 02:31:01,181 - INFO - ✅ Loaded 632 raw rows from slc_data_partone_2024.csv.
+2025-08-28 02:31:01,181 - INFO - STEP 2: Removing summary rows from data...
+2025-08-28 02:31:01,205 - INFO - ✅ No summary rows found.
+2025-08-28 02:31:01,205 - INFO - STEP 3: Standardizing column names...
+2025-08-28 02:31:01,205 - INFO - ✅ Column names standardized.
+2025-08-28 02:31:01,205 - INFO - STEP 4: Extracting and validating Job ID...
+2025-08-28 02:31:01,205 - INFO - Found URL column: 'full_url'. Extracting job_id.
+2025-08-28 02:31:01,209 - INFO - ✅ Successfully extracted 632 job IDs.
+2025-08-28 02:31:01,210 - INFO - STEP 5: Handling missing values...
+2025-08-28 02:31:01,210 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2179020.
+2025-08-28 02:31:01,211 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2163828.
+2025-08-28 02:31:01,211 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2149507.
+2025-08-28 02:31:01,211 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2123528.
+2025-08-28 02:31:01,211 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2120792.
+2025-08-28 02:31:01,211 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2115359.
+2025-08-28 02:31:01,211 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2103428.
+2025-08-28 02:31:01,212 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2095326.
+2025-08-28 02:31:01,212 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2080423.
+2025-08-28 02:31:01,212 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2048140.
+2025-08-28 02:31:01,212 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2019802.
+2025-08-28 02:31:01,212 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1946183.
+2025-08-28 02:31:01,212 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1918293.
+2025-08-28 02:31:01,212 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1913987.
+2025-08-28 02:31:01,213 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1913984.
+2025-08-28 02:31:01,213 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1913051.
+2025-08-28 02:31:01,213 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1898069.
+2025-08-28 02:31:01,213 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1876957.
+2025-08-28 02:31:01,213 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1873791.
+2025-08-28 02:31:01,213 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1859544.
+2025-08-28 02:31:01,214 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1855087.
+2025-08-28 02:31:01,214 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1855019.
+2025-08-28 02:31:01,214 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1844273.
+2025-08-28 02:31:01,214 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1835568.
+2025-08-28 02:31:01,214 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1817800.
+2025-08-28 02:31:01,214 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1813527.
+2025-08-28 02:31:01,214 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1813519.
+2025-08-28 02:31:01,215 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1807547.
+2025-08-28 02:31:01,215 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1807032.
+2025-08-28 02:31:01,215 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1805476.
+2025-08-28 02:31:01,215 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1800171.
+2025-08-28 02:31:01,215 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1779116.
+2025-08-28 02:31:01,215 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1778787.
+2025-08-28 02:31:01,215 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1763024.
+2025-08-28 02:31:01,215 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1743681.
+2025-08-28 02:31:01,216 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1743596.
+2025-08-28 02:31:01,216 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1716305.
+2025-08-28 02:31:01,216 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 1680365.
+2025-08-28 02:31:01,217 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2179020.
+2025-08-28 02:31:01,217 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2178145.
+2025-08-28 02:31:01,217 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2173240.
+2025-08-28 02:31:01,217 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2163828.
+2025-08-28 02:31:01,217 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2149507.
+2025-08-28 02:31:01,218 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2123626.
+2025-08-28 02:31:01,218 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2123549.
+2025-08-28 02:31:01,218 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2123528.
+2025-08-28 02:31:01,218 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2121044.
+2025-08-28 02:31:01,218 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2120792.
+2025-08-28 02:31:01,218 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2115359.
+2025-08-28 02:31:01,218 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2103428.
+2025-08-28 02:31:01,219 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2095326.
+2025-08-28 02:31:01,219 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2094901.
+2025-08-28 02:31:01,219 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2094377.
+2025-08-28 02:31:01,219 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2092071.
+2025-08-28 02:31:01,219 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2084682.
+2025-08-28 02:31:01,219 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2080423.
+2025-08-28 02:31:01,219 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2078925.
+2025-08-28 02:31:01,220 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2048140.
+2025-08-28 02:31:01,220 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2019802.
+2025-08-28 02:31:01,220 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1998174.
+2025-08-28 02:31:01,220 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1992736.
+2025-08-28 02:31:01,220 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1972886.
+2025-08-28 02:31:01,220 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1950157.
+2025-08-28 02:31:01,220 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1946183.
+2025-08-28 02:31:01,221 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1946071.
+2025-08-28 02:31:01,221 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1918293.
+2025-08-28 02:31:01,221 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1913987.
+2025-08-28 02:31:01,221 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1913984.
+2025-08-28 02:31:01,221 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1913051.
+2025-08-28 02:31:01,221 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1912974.
+2025-08-28 02:31:01,221 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1912767.
+2025-08-28 02:31:01,222 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1898069.
+2025-08-28 02:31:01,222 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1887658.
+2025-08-28 02:31:01,222 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1884524.
+2025-08-28 02:31:01,222 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1873791.
+2025-08-28 02:31:01,222 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1859544.
+2025-08-28 02:31:01,222 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1855692.
+2025-08-28 02:31:01,222 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1855087.
+2025-08-28 02:31:01,223 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1855019.
+2025-08-28 02:31:01,223 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1844273.
+2025-08-28 02:31:01,223 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1844217.
+2025-08-28 02:31:01,223 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1839358.
+2025-08-28 02:31:01,223 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1835568.
+2025-08-28 02:31:01,223 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1813527.
+2025-08-28 02:31:01,223 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1813519.
+2025-08-28 02:31:01,224 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1807547.
+2025-08-28 02:31:01,224 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1807032.
+2025-08-28 02:31:01,224 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1805476.
+2025-08-28 02:31:01,224 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1800171.
+2025-08-28 02:31:01,224 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1782679.
+2025-08-28 02:31:01,224 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1779116.
+2025-08-28 02:31:01,224 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1778787.
+2025-08-28 02:31:01,224 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1763024.
+2025-08-28 02:31:01,225 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1760339.
+2025-08-28 02:31:01,225 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1760124.
+2025-08-28 02:31:01,225 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1759839.
+2025-08-28 02:31:01,225 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1743681.
+2025-08-28 02:31:01,225 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1743596.
+2025-08-28 02:31:01,225 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1716305.
+2025-08-28 02:31:01,226 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 1680365.
+2025-08-28 02:31:01,227 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2125940.
+2025-08-28 02:31:01,227 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2125819.
+2025-08-28 02:31:01,227 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2121044.
+2025-08-28 02:31:01,227 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2098135.
+2025-08-28 02:31:01,227 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2030730.
+2025-08-28 02:31:01,227 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 1863341.
+2025-08-28 02:31:01,227 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 1854102.
+2025-08-28 02:31:01,228 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 1788569.
+2025-08-28 02:31:01,228 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 1783699.
+2025-08-28 02:31:01,229 - WARNING - Dropped column 'estimate' due to >90% missing values.
+2025-08-28 02:31:01,230 - WARNING - Dropped column 'estimate_date_last_edited' due to >90% missing values.
+2025-08-28 02:31:01,231 - WARNING - Dropped column 'estimate_gt_margin' due to >90% missing values.
+2025-08-28 02:31:01,232 - WARNING - Dropped column 'estimate_estimate_gross_margin' due to >90% missing values.
+2025-08-28 02:31:01,233 - WARNING - Dropped column 'estimate_owes' due to >90% missing values.
+2025-08-28 02:31:01,234 - WARNING - Dropped column 'estimate_total' due to >90% missing values.
+2025-08-28 02:31:01,242 - WARNING - Dropped column 'customer_marketing_rep' due to >90% missing values.
+2025-08-28 02:31:01,246 - WARNING - Dropped column 'date_approved' due to >90% missing values.
+2025-08-28 02:31:01,247 - WARNING - Dropped column 'date_signed' due to >90% missing values.
+2025-08-28 02:31:01,248 - WARNING - Dropped column 'date_rd_released' due to >90% missing values.
+2025-08-28 02:31:01,249 - WARNING - Dropped column 'date_completed' due to >90% missing values.
+2025-08-28 02:31:01,250 - WARNING - Dropped column 'date_roof_completed' due to >90% missing values.
+2025-08-28 02:31:01,251 - WARNING - Dropped column 'roofing_crew' due to >90% missing values.
+2025-08-28 02:31:01,253 - WARNING - Dropped column 'date_closed' due to >90% missing values.
+2025-08-28 02:31:01,254 - WARNING - Dropped column 'insurance_company_name' due to >90% missing values.
+2025-08-28 02:31:01,255 - WARNING - Dropped column 'insurance_company_claims_phone' due to >90% missing values.
+2025-08-28 02:31:01,256 - WARNING - Dropped column 'insurance_company_claims_extension' due to >90% missing values.
+2025-08-28 02:31:01,257 - WARNING - Dropped column 'insurance_company_claims_email' due to >90% missing values.
+2025-08-28 02:31:01,258 - WARNING - Dropped column 'claim_handler_name' due to >90% missing values.
+2025-08-28 02:31:01,259 - WARNING - Dropped column 'claim_handler_phone' due to >90% missing values.
+2025-08-28 02:31:01,260 - WARNING - Dropped column 'claim_handler_email' due to >90% missing values.
+2025-08-28 02:31:01,260 - INFO - ✅ Missing values handled.
+2025-08-28 02:31:01,260 - INFO - STEP 6: Optimizing data types...
+2025-08-28 02:31:01,319 - INFO - ✅ Data types optimized.
+2025-08-28 02:31:01,319 - INFO - STEP 7: Removing duplicate rows...
+2025-08-28 02:31:01,325 - INFO - ✅ Duplicate removal complete.
+2025-08-28 02:31:01,325 - INFO - ============================================================
+2025-08-28 02:31:01,325 - INFO - CLEANING COMPLETE for slc_data_partone_2024.csv. Final shape: (632, 22)
+2025-08-28 02:31:01,325 - INFO - ============================================================
+2025-08-28 02:31:01,326 - INFO - ============================================================
+2025-08-28 02:31:01,326 - INFO - STARTING DATA CLEANING FOR: slc_data_parttwo_2024.csv
+2025-08-28 02:31:01,326 - INFO - ============================================================
+2025-08-28 02:31:01,326 - INFO - STEP 1: Loading data from file...
+2025-08-28 02:31:01,352 - INFO - ✅ Loaded 1213 raw rows from slc_data_parttwo_2024.csv.
+2025-08-28 02:31:01,352 - INFO - STEP 2: Removing summary rows from data...
+2025-08-28 02:31:01,397 - INFO - ✅ Found and removed 3 summary/header rows.
+2025-08-28 02:31:01,399 - INFO - STEP 3: Standardizing column names...
+2025-08-28 02:31:01,399 - INFO - ✅ Column names standardized.
+2025-08-28 02:31:01,399 - INFO - STEP 4: Extracting and validating Job ID...
+2025-08-28 02:31:01,399 - INFO - Found URL column: 'full_url'. Extracting job_id.
+2025-08-28 02:31:01,405 - INFO - ✅ Successfully extracted 1210 job IDs.
+2025-08-28 02:31:01,405 - INFO - STEP 5: Handling missing values...
+2025-08-28 02:31:01,406 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2649338.
+2025-08-28 02:31:01,406 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2621935.
+2025-08-28 02:31:01,406 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2616360.
+2025-08-28 02:31:01,406 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2600184.
+2025-08-28 02:31:01,406 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2593045.
+2025-08-28 02:31:01,407 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2591208.
+2025-08-28 02:31:01,407 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2591207.
+2025-08-28 02:31:01,407 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2591168.
+2025-08-28 02:31:01,407 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2591119.
+2025-08-28 02:31:01,407 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2591016.
+2025-08-28 02:31:01,407 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2591014.
+2025-08-28 02:31:01,407 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2591013.
+2025-08-28 02:31:01,408 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2591010.
+2025-08-28 02:31:01,408 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2591008.
+2025-08-28 02:31:01,408 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2591007.
+2025-08-28 02:31:01,408 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2591004.
+2025-08-28 02:31:01,408 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2591000.
+2025-08-28 02:31:01,408 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2590999.
+2025-08-28 02:31:01,408 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2590993.
+2025-08-28 02:31:01,409 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2590992.
+2025-08-28 02:31:01,409 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2590990.
+2025-08-28 02:31:01,409 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2590985.
+2025-08-28 02:31:01,409 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2590984.
+2025-08-28 02:31:01,409 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2590980.
+2025-08-28 02:31:01,409 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2590973.
+2025-08-28 02:31:01,409 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2590970.
+2025-08-28 02:31:01,410 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2575273.
+2025-08-28 02:31:01,410 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2539327.
+2025-08-28 02:31:01,410 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2519918.
+2025-08-28 02:31:01,410 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2515726.
+2025-08-28 02:31:01,410 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2515721.
+2025-08-28 02:31:01,410 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2515716.
+2025-08-28 02:31:01,410 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2512485.
+2025-08-28 02:31:01,410 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2476310.
+2025-08-28 02:31:01,411 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2471614.
+2025-08-28 02:31:01,411 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2461544.
+2025-08-28 02:31:01,411 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2406008.
+2025-08-28 02:31:01,411 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2400010.
+2025-08-28 02:31:01,411 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2388807.
+2025-08-28 02:31:01,411 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2360878.
+2025-08-28 02:31:01,411 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2348366.
+2025-08-28 02:31:01,412 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2343306.
+2025-08-28 02:31:01,412 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2336869.
+2025-08-28 02:31:01,412 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2331472.
+2025-08-28 02:31:01,412 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2331469.
+2025-08-28 02:31:01,412 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2326382.
+2025-08-28 02:31:01,412 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2323289.
+2025-08-28 02:31:01,412 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2317230.
+2025-08-28 02:31:01,412 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2314276.
+2025-08-28 02:31:01,413 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2312907.
+2025-08-28 02:31:01,413 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2311879.
+2025-08-28 02:31:01,413 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2311362.
+2025-08-28 02:31:01,413 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2308132.
+2025-08-28 02:31:01,413 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2308046.
+2025-08-28 02:31:01,413 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2274562.
+2025-08-28 02:31:01,414 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2252680.
+2025-08-28 02:31:01,414 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2243209.
+2025-08-28 02:31:01,414 - WARNING - ⚠️ Missing critical data: Column 'customer_first_name' is empty for job_id: 2183259.
+2025-08-28 02:31:01,415 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2652674.
+2025-08-28 02:31:01,415 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2649338.
+2025-08-28 02:31:01,415 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2621935.
+2025-08-28 02:31:01,415 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2618919.
+2025-08-28 02:31:01,415 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2616360.
+2025-08-28 02:31:01,416 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2600184.
+2025-08-28 02:31:01,416 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2593045.
+2025-08-28 02:31:01,416 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2591208.
+2025-08-28 02:31:01,416 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2591207.
+2025-08-28 02:31:01,416 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2591168.
+2025-08-28 02:31:01,416 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2591119.
+2025-08-28 02:31:01,416 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2591016.
+2025-08-28 02:31:01,417 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2591014.
+2025-08-28 02:31:01,417 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2591013.
+2025-08-28 02:31:01,417 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2591010.
+2025-08-28 02:31:01,417 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2591008.
+2025-08-28 02:31:01,417 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2591007.
+2025-08-28 02:31:01,417 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2591004.
+2025-08-28 02:31:01,417 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2591000.
+2025-08-28 02:31:01,418 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2590999.
+2025-08-28 02:31:01,418 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2590993.
+2025-08-28 02:31:01,418 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2590992.
+2025-08-28 02:31:01,418 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2590990.
+2025-08-28 02:31:01,418 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2590985.
+2025-08-28 02:31:01,418 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2590984.
+2025-08-28 02:31:01,418 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2590980.
+2025-08-28 02:31:01,419 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2590973.
+2025-08-28 02:31:01,419 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2590970.
+2025-08-28 02:31:01,419 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2588344.
+2025-08-28 02:31:01,419 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2587275.
+2025-08-28 02:31:01,419 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2584082.
+2025-08-28 02:31:01,419 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2582479.
+2025-08-28 02:31:01,419 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2581254.
+2025-08-28 02:31:01,420 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2575273.
+2025-08-28 02:31:01,420 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2555513.
+2025-08-28 02:31:01,420 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2552540.
+2025-08-28 02:31:01,420 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2551249.
+2025-08-28 02:31:01,420 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2540309.
+2025-08-28 02:31:01,420 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2534126.
+2025-08-28 02:31:01,420 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2519918.
+2025-08-28 02:31:01,420 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2515726.
+2025-08-28 02:31:01,421 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2515721.
+2025-08-28 02:31:01,421 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2515716.
+2025-08-28 02:31:01,421 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2515266.
+2025-08-28 02:31:01,421 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2512485.
+2025-08-28 02:31:01,421 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2496582.
+2025-08-28 02:31:01,421 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2494901.
+2025-08-28 02:31:01,422 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2492896.
+2025-08-28 02:31:01,422 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2476978.
+2025-08-28 02:31:01,422 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2476310.
+2025-08-28 02:31:01,422 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2475748.
+2025-08-28 02:31:01,422 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2475727.
+2025-08-28 02:31:01,422 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2471614.
+2025-08-28 02:31:01,422 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2463159.
+2025-08-28 02:31:01,423 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2461544.
+2025-08-28 02:31:01,423 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2461039.
+2025-08-28 02:31:01,423 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2460906.
+2025-08-28 02:31:01,423 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2456849.
+2025-08-28 02:31:01,423 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2454667.
+2025-08-28 02:31:01,423 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2449697.
+2025-08-28 02:31:01,423 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2449243.
+2025-08-28 02:31:01,423 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2449234.
+2025-08-28 02:31:01,424 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2443834.
+2025-08-28 02:31:01,424 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2442287.
+2025-08-28 02:31:01,424 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2417947.
+2025-08-28 02:31:01,424 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2409467.
+2025-08-28 02:31:01,424 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2406008.
+2025-08-28 02:31:01,424 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2400010.
+2025-08-28 02:31:01,424 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2390571.
+2025-08-28 02:31:01,425 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2388321.
+2025-08-28 02:31:01,425 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2372992.
+2025-08-28 02:31:01,425 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2371568.
+2025-08-28 02:31:01,425 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2360878.
+2025-08-28 02:31:01,425 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2349254.
+2025-08-28 02:31:01,425 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2343306.
+2025-08-28 02:31:01,425 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2341836.
+2025-08-28 02:31:01,426 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2340940.
+2025-08-28 02:31:01,426 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2336869.
+2025-08-28 02:31:01,426 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2334326.
+2025-08-28 02:31:01,426 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2331916.
+2025-08-28 02:31:01,426 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2331472.
+2025-08-28 02:31:01,426 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2331469.
+2025-08-28 02:31:01,426 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2326382.
+2025-08-28 02:31:01,426 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2323289.
+2025-08-28 02:31:01,427 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2322089.
+2025-08-28 02:31:01,427 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2320636.
+2025-08-28 02:31:01,427 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2318819.
+2025-08-28 02:31:01,427 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2317513.
+2025-08-28 02:31:01,427 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2317230.
+2025-08-28 02:31:01,427 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2314406.
+2025-08-28 02:31:01,427 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2314276.
+2025-08-28 02:31:01,428 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2313607.
+2025-08-28 02:31:01,428 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2313538.
+2025-08-28 02:31:01,428 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2313512.
+2025-08-28 02:31:01,428 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2312907.
+2025-08-28 02:31:01,428 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2312335.
+2025-08-28 02:31:01,428 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2311879.
+2025-08-28 02:31:01,428 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2311673.
+2025-08-28 02:31:01,428 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2311379.
+2025-08-28 02:31:01,429 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2308653.
+2025-08-28 02:31:01,429 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2308292.
+2025-08-28 02:31:01,429 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2308132.
+2025-08-28 02:31:01,429 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2307810.
+2025-08-28 02:31:01,429 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2282419.
+2025-08-28 02:31:01,429 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2257171.
+2025-08-28 02:31:01,429 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2256533.
+2025-08-28 02:31:01,430 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2254129.
+2025-08-28 02:31:01,430 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2243209.
+2025-08-28 02:31:01,430 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2229610.
+2025-08-28 02:31:01,430 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2227277.
+2025-08-28 02:31:01,430 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2217322.
+2025-08-28 02:31:01,430 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2202806.
+2025-08-28 02:31:01,430 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2183556.
+2025-08-28 02:31:01,431 - WARNING - ⚠️ Missing critical data: Column 'customer_last_name' is empty for job_id: 2183259.
+2025-08-28 02:31:01,432 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2593650.
+2025-08-28 02:31:01,432 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2591054.
+2025-08-28 02:31:01,432 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2591053.
+2025-08-28 02:31:01,432 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2587275.
+2025-08-28 02:31:01,433 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2585305.
+2025-08-28 02:31:01,433 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2570243.
+2025-08-28 02:31:01,433 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2570155.
+2025-08-28 02:31:01,433 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2569960.
+2025-08-28 02:31:01,433 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2564003.
+2025-08-28 02:31:01,433 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2563181.
+2025-08-28 02:31:01,434 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2562960.
+2025-08-28 02:31:01,434 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2554248.
+2025-08-28 02:31:01,434 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2554170.
+2025-08-28 02:31:01,434 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2545727.
+2025-08-28 02:31:01,434 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2535950.
+2025-08-28 02:31:01,434 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2525585.
+2025-08-28 02:31:01,434 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2525530.
+2025-08-28 02:31:01,435 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2507148.
+2025-08-28 02:31:01,435 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2506817.
+2025-08-28 02:31:01,435 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2487417.
+2025-08-28 02:31:01,435 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2468613.
+2025-08-28 02:31:01,435 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2468228.
+2025-08-28 02:31:01,435 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2461519.
+2025-08-28 02:31:01,435 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2461039.
+2025-08-28 02:31:01,435 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2460906.
+2025-08-28 02:31:01,436 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2442287.
+2025-08-28 02:31:01,436 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2442205.
+2025-08-28 02:31:01,436 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2442139.
+2025-08-28 02:31:01,436 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2442072.
+2025-08-28 02:31:01,436 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2438728.
+2025-08-28 02:31:01,436 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2409140.
+2025-08-28 02:31:01,436 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2407502.
+2025-08-28 02:31:01,437 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2402752.
+2025-08-28 02:31:01,437 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2382910.
+2025-08-28 02:31:01,437 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2380950.
+2025-08-28 02:31:01,437 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2372668.
+2025-08-28 02:31:01,437 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2359806.
+2025-08-28 02:31:01,437 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2356253.
+2025-08-28 02:31:01,438 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2343769.
+2025-08-28 02:31:01,438 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2343721.
+2025-08-28 02:31:01,438 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2341041.
+2025-08-28 02:31:01,438 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2336584.
+2025-08-28 02:31:01,438 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2333259.
+2025-08-28 02:31:01,438 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2331916.
+2025-08-28 02:31:01,438 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2329587.
+2025-08-28 02:31:01,438 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2324664.
+2025-08-28 02:31:01,439 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2322439.
+2025-08-28 02:31:01,439 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2321435.
+2025-08-28 02:31:01,439 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2320203.
+2025-08-28 02:31:01,439 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2315569.
+2025-08-28 02:31:01,439 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2313011.
+2025-08-28 02:31:01,439 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2312829.
+2025-08-28 02:31:01,439 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2312784.
+2025-08-28 02:31:01,439 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2312741.
+2025-08-28 02:31:01,440 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2310744.
+2025-08-28 02:31:01,440 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2299625.
+2025-08-28 02:31:01,440 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2291450.
+2025-08-28 02:31:01,440 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2291398.
+2025-08-28 02:31:01,440 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2284985.
+2025-08-28 02:31:01,440 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2283938.
+2025-08-28 02:31:01,440 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2280104.
+2025-08-28 02:31:01,441 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2269815.
+2025-08-28 02:31:01,441 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2267984.
+2025-08-28 02:31:01,441 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2267803.
+2025-08-28 02:31:01,441 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2267786.
+2025-08-28 02:31:01,441 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2261013.
+2025-08-28 02:31:01,441 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2260030.
+2025-08-28 02:31:01,441 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2258569.
+2025-08-28 02:31:01,442 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2256533.
+2025-08-28 02:31:01,442 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2256525.
+2025-08-28 02:31:01,442 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2256511.
+2025-08-28 02:31:01,442 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2256498.
+2025-08-28 02:31:01,442 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2256485.
+2025-08-28 02:31:01,442 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2253830.
+2025-08-28 02:31:01,442 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2245559.
+2025-08-28 02:31:01,442 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2245522.
+2025-08-28 02:31:01,443 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2245335.
+2025-08-28 02:31:01,443 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2245286.
+2025-08-28 02:31:01,443 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2245254.
+2025-08-28 02:31:01,443 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2233338.
+2025-08-28 02:31:01,443 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2233164.
+2025-08-28 02:31:01,443 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2229610.
+2025-08-28 02:31:01,443 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2222591.
+2025-08-28 02:31:01,444 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2201478.
+2025-08-28 02:31:01,444 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2201067.
+2025-08-28 02:31:01,444 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2200980.
+2025-08-28 02:31:01,444 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2200829.
+2025-08-28 02:31:01,444 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2200465.
+2025-08-28 02:31:01,444 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2200405.
+2025-08-28 02:31:01,444 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2200389.
+2025-08-28 02:31:01,444 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2200267.
+2025-08-28 02:31:01,445 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2200211.
+2025-08-28 02:31:01,445 - WARNING - ⚠️ Missing critical data: Column 'city' is empty for job_id: 2182405.
+2025-08-28 02:31:01,446 - WARNING - Dropped column 'estimate' due to >90% missing values.
+2025-08-28 02:31:01,464 - WARNING - Dropped column 'date_approved' due to >90% missing values.
+2025-08-28 02:31:01,465 - WARNING - Dropped column 'date_signed' due to >90% missing values.
+2025-08-28 02:31:01,466 - WARNING - Dropped column 'date_rd_released' due to >90% missing values.
+2025-08-28 02:31:01,468 - WARNING - Dropped column 'date_completed' due to >90% missing values.
+2025-08-28 02:31:01,469 - WARNING - Dropped column 'date_roof_completed' due to >90% missing values.
+2025-08-28 02:31:01,470 - WARNING - Dropped column 'roofing_crew' due to >90% missing values.
+2025-08-28 02:31:01,473 - WARNING - Dropped column 'date_closed' due to >90% missing values.
+2025-08-28 02:31:01,474 - WARNING - Dropped column 'insurance_company_name' due to >90% missing values.
+2025-08-28 02:31:01,475 - WARNING - Dropped column 'insurance_company_claims_phone' due to >90% missing values.
+2025-08-28 02:31:01,476 - WARNING - Dropped column 'insurance_company_claims_extension' due to >90% missing values.
+2025-08-28 02:31:01,478 - WARNING - Dropped column 'insurance_company_claims_email' due to >90% missing values.
+2025-08-28 02:31:01,479 - WARNING - Dropped column 'claim_handler_name' due to >90% missing values.
+2025-08-28 02:31:01,480 - WARNING - Dropped column 'claim_handler_phone' due to >90% missing values.
+2025-08-28 02:31:01,481 - WARNING - Dropped column 'claim_handler_email' due to >90% missing values.
+2025-08-28 02:31:01,481 - INFO - ✅ Missing values handled.
+2025-08-28 02:31:01,481 - INFO - STEP 6: Optimizing data types...
+2025-08-28 02:31:01,596 - INFO - ✅ Data types optimized.
+2025-08-28 02:31:01,596 - INFO - STEP 7: Removing duplicate rows...
+2025-08-28 02:31:01,605 - INFO - ✅ Duplicate removal complete.
+2025-08-28 02:31:01,605 - INFO - ============================================================
+2025-08-28 02:31:01,605 - INFO - CLEANING COMPLETE for slc_data_parttwo_2024.csv. Final shape: (1210, 28)
+2025-08-28 02:31:01,605 - INFO - ============================================================
