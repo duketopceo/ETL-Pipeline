@@ -148,6 +148,19 @@ def clean_csv_data(file_content, file_name, assessment_results=None):
     report['action'] = actions
     report['details'] = details
 
+    # Ensure job_id appears in the report
+    if 'job_id' not in report['cleaned_column'].values:
+        report = pd.concat([
+            report,
+            pd.DataFrame([{
+                'original_column': 'job_id',
+                'missing_percent_before': 0.0,
+                'cleaned_column': 'job_id',
+                'action': 'Kept',
+                'details': ''
+            }])
+        ], ignore_index=True)
+
     logger.info(f"CLEANING COMPLETE for {file_name}. Final shape: {df.shape}")
     return df, report
 
