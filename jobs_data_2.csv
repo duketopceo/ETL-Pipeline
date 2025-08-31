@@ -1,0 +1,8 @@
+"job_link","salary","location"
+"https://example.com/job/12345/","80000","New York"
+"https://example.com/job/54321/","",""
+"https://example.com/job/11111/","120000","San Francisco"
+"https://example.com/job/23456/","75000",""
+"https://example.com/job/67890/","95000","Chicago"
+"https://example.com/job/22222/","60000","Boston"
+"another_bad_url","50000","Miami"

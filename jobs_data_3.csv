@@ -1,0 +1,5 @@
+"job_url","status","posted_date"
+"https://example.com/job/12345/details","open","2023-01-15"
+"https://example.com/job/99999/details","closed","2023-02-20"
+"https://example.com/job/11111/details","open","2023-03-01"
+"https://example.com/job/77777/details","open",

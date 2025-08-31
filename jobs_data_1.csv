@@ -1,0 +1,8 @@
+"job_url","category","company"
+"https://example.com/job/12345/details","Engineering","Innovate Inc."
+"https://example.com/job/54321/details","Marketing","Market Pros"
+"https://example.com/job/98765/details","Sales","SellCo"
+"https://example.com/job//details","",""
+"https://example.com/job/23456/details","Engineering",""
+"https://example.com/job/67890/details","Sales","SellCo"
+"malformed_url","Data Science","DataCorp"
