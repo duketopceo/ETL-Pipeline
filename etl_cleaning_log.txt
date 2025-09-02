@@ -1,0 +1,9 @@
+2025-09-02 18:17:03,419 - INFO - ASSESSING: test.csv
+2025-09-02 18:17:03,421 - INFO - ============================================================
+2025-09-02 18:17:03,421 - INFO - STARTING DATA CLEANING FOR: test.csv
+2025-09-02 18:17:03,421 - INFO - ============================================================
+2025-09-02 18:17:03,421 - INFO - Loaded 2 raw rows from test.csv.
+2025-09-02 18:17:03,422 - INFO - Standardized column names.
+2025-09-02 18:17:03,423 - INFO - Found URL column: 'url'. Extracting job_id.
+2025-09-02 18:17:03,424 - INFO - Successfully extracted 2 job IDs.
+2025-09-02 18:17:03,426 - INFO - CLEANING COMPLETE for test.csv. Final shape: (2, 3)
