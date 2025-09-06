@@ -12,6 +12,8 @@ import logging
 import re
 import warnings
 import io
+import os
+from datetime import datetime
 
 # --- Logging Configuration ---
 logging.basicConfig(
@@ -25,6 +27,115 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 warnings.filterwarnings('ignore', category=UserWarning, module='pandas')
+
+# ================================================================
+# BIGQUERY HELPER FUNCTIONS
+# ================================================================
+
+def validate_bigquery_config(bq_config):
+    """Validate BigQuery configuration parameters"""
+    if not bq_config:
+        return False, "BigQuery configuration is required"
+    
+    required_fields = ['project', 'dataset', 'table']
+    for field in required_fields:
+        if not bq_config.get(field):
+            return False, f"BigQuery {field} is required"
+    
+    # Validate naming conventions
+    project_id = bq_config['project']
+    dataset_id = bq_config['dataset']
+    table_id = bq_config['table']
+    
+    # Basic validation for BigQuery naming rules
+    if not re.match(r'^[a-zA-Z0-9][a-zA-Z0-9_-]*[a-zA-Z0-9]$', project_id) and len(project_id) > 1:
+        return False, f"Invalid project ID format: {project_id}"
+    
+    if not re.match(r'^[a-zA-Z_][a-zA-Z0-9_]*$', dataset_id):
+        return False, f"Invalid dataset ID format: {dataset_id}"
+        
+    if not re.match(r'^[a-zA-Z_][a-zA-Z0-9_]*$', table_id):
+        return False, f"Invalid table ID format: {table_id}"
+    
+    return True, "Configuration is valid"
+
+def upload_to_bigquery(df, bq_config, retries=3):
+    """
+    Upload DataFrame to BigQuery with proper error handling and retries
+    
+    Returns:
+        dict: Results dictionary with success/failure information
+    """
+    try:
+        from google.cloud import bigquery
+        from google.cloud.exceptions import GoogleCloudError
+    except ImportError:
+        return {
+            'success': False,
+            'error': 'google-cloud-bigquery package not installed'
+        }
+    
+    # Validate configuration
+    is_valid, validation_message = validate_bigquery_config(bq_config)
+    if not is_valid:
+        return {
+            'success': False,
+            'error': f'Configuration validation failed: {validation_message}'
+        }
+    
+    for attempt in range(retries):
+        try:
+            # Initialize client
+            client = bigquery.Client(project=bq_config['project'])
+            
+            # Create dataset if it doesn't exist
+            dataset_id = f"{bq_config['project']}.{bq_config['dataset']}"
+            try:
+                client.get_dataset(dataset_id)
+                logger.info(f"Dataset {dataset_id} already exists")
+            except Exception as dataset_error:
+                try:
+                    logger.info(f"Creating dataset {dataset_id}")
+                    dataset = bigquery.Dataset(dataset_id)
+                    dataset.location = "US"  # Set default location
+                    client.create_dataset(dataset, exists_ok=True)
+                    logger.info(f"Successfully created dataset {dataset_id}")
+                except Exception as create_error:
+                    error_msg = f"Failed to create dataset {dataset_id}: {create_error}"
+                    logger.error(error_msg)
+                    return {'success': False, 'error': error_msg}
+            
+            # Upload to BigQuery
+            table_id = f"{dataset_id}.{bq_config['table']}"
+            logger.info(f"Uploading data to table {table_id}")
+            
+            job_config = bigquery.LoadJobConfig(
+                write_disposition="WRITE_TRUNCATE",  # Overwrite table
+                autodetect=True,  # Auto-detect schema
+                create_disposition="CREATE_IF_NEEDED"  # Create table if needed
+            )
+            
+            job = client.load_table_from_dataframe(df, table_id, job_config=job_config)
+            job.result()  # Wait for completion
+            
+            logger.info(f"Successfully uploaded {len(df)} rows to {table_id}")
+            
+            return {
+                'success': True,
+                'table_id': table_id,
+                'rows_uploaded': len(df),
+                'columns_uploaded': len(df.columns)
+            }
+            
+        except Exception as e:
+            logger.warning(f"BigQuery upload attempt {attempt + 1} failed: {e}")
+            if attempt == retries - 1:  # Last attempt
+                return {
+                    'success': False,
+                    'error': f'Upload failed after {retries} attempts: {str(e)}'
+                }
+            
+    return {'success': False, 'error': 'Unexpected error in upload process'}
 
 # ================================================================
 # PUBLIC FUNCTIONS

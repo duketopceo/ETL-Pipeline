@@ -1,0 +1,23 @@
+2025-09-02 18:24:04,399 - INFO - ASSESSING: test.csv
+2025-09-02 18:24:04,402 - INFO - ============================================================
+2025-09-02 18:24:04,402 - INFO - STARTING DATA CLEANING FOR: test.csv
+2025-09-02 18:24:04,402 - INFO - ============================================================
+2025-09-02 18:24:04,402 - INFO - Loaded 2 raw rows from test.csv.
+2025-09-02 18:24:04,404 - INFO - Standardized column names.
+2025-09-02 18:24:04,404 - WARNING - No URL column found. Cannot extract job_id.
+2025-09-02 18:24:04,406 - INFO - CLEANING COMPLETE for test.csv. Final shape: (2, 3)
+2025-09-02 18:24:04,565 - INFO - Dataset test-project.test_dataset already exists
+2025-09-02 18:24:04,565 - INFO - Uploading data to table test-project.test_dataset.test_table
+2025-09-02 18:24:04,565 - INFO - Successfully uploaded 2 rows to test-project.test_dataset.test_table
+2025-09-02 18:24:04,567 - INFO - Creating dataset test-project.new_dataset
+2025-09-02 18:24:04,567 - INFO - Successfully created dataset test-project.new_dataset
+2025-09-02 18:24:04,567 - INFO - Uploading data to table test-project.new_dataset.test_table
+2025-09-02 18:24:04,567 - INFO - Successfully uploaded 2 rows to test-project.new_dataset.test_table
+2025-09-02 18:24:04,570 - INFO - ASSESSING: test.csv
+2025-09-02 18:24:04,572 - INFO - ============================================================
+2025-09-02 18:24:04,572 - INFO - STARTING DATA CLEANING FOR: test.csv
+2025-09-02 18:24:04,572 - INFO - ============================================================
+2025-09-02 18:24:04,573 - INFO - Loaded 2 raw rows from test.csv.
+2025-09-02 18:24:04,574 - INFO - Standardized column names.
+2025-09-02 18:24:04,574 - WARNING - No URL column found. Cannot extract job_id.
+2025-09-02 18:24:04,577 - INFO - CLEANING COMPLETE for test.csv. Final shape: (2, 3)
