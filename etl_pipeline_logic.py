@@ -1,10 +1,6 @@
-# ================================================================
-# COMPREHENSIVE ETL DATA CLEANING PIPELINE LOGIC
-# Date: 2025-08-31
-# Author: duketopceo (Refactored and Enhanced by Jules)
-# Purpose: Core logic for data cleaning, with job_id extraction,
-#          detailed logging, and modular functions for reporting.
-# ================================================================
+# ETL Pipeline Data Processing Logic
+# Author: Data Engineering Portfolio Project
+# Purpose: Core data cleaning and processing functions with BigQuery integration
 
 import pandas as pd
 import numpy as np
@@ -15,7 +11,7 @@ import io
 import os
 from datetime import datetime
 
-# --- Logging Configuration ---
+# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -29,7 +25,7 @@ logger = logging.getLogger(__name__)
 warnings.filterwarnings('ignore', category=UserWarning, module='pandas')
 
 # ================================================================
-# BIGQUERY HELPER FUNCTIONS
+# BIGQUERY INTEGRATION FUNCTIONS
 # ================================================================
 
 def validate_bigquery_config(bq_config):
@@ -138,12 +134,19 @@ def upload_to_bigquery(df, bq_config, retries=3):
     return {'success': False, 'error': 'Unexpected error in upload process'}
 
 # ================================================================
-# PUBLIC FUNCTIONS
+# CORE DATA PROCESSING FUNCTIONS
 # ================================================================
 
 def assess_raw_data(file_content, file_name):
     """
-    Assesses raw file content to determine encoding and delimiter.
+    Analyze raw file content to determine optimal encoding and delimiter.
+    
+    Args:
+        file_content: Raw file bytes
+        file_name: Name of the file being processed
+        
+    Returns:
+        dict: Assessment results with encoding and delimiter recommendations
     """
     logger.info(f"ASSESSING: {file_name}")
     assessment = {
@@ -276,7 +279,7 @@ def clean_csv_data(file_content, file_name, assessment_results=None):
     return df, report
 
 # ================================================================
-# INTERNAL HELPER FUNCTIONS (MODIFIED TO RETURN ACTIONS)
+# DATA CLEANING HELPER FUNCTIONS
 # ================================================================
 
 def _remove_summary_rows(df):
