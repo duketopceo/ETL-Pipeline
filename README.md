@@ -51,10 +51,8 @@ jupyter notebook
 ├── bigquery_config.py           # Cloud integration utilities
 ├── requirements.txt             # Python dependencies
 ├── tests/                       # Automated test suite
-├── sample_data/                 # Example datasets
-│   ├── boise_2024_data_raw.csv
-│   ├── slc_data_partone_2024.csv
-│   └── slc_data_parttwo_2024.csv
+├── sample_data/                 # Example datasets (synthetic only)
+│   └── sample_rooflink_data.csv
 └── .env.example                 # Environment configuration template
 ```
 

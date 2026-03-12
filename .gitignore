@@ -66,10 +66,14 @@ Thumbs.db
 
 # Project specific
 etl_cleaning_log.txt
-*.csv
-!*_raw.csv
-!slc_data_*.csv
-!boise_*data*.csv
+
+# Cached bytecode (belt and suspenders)
+__pycache__/
+
+# Real data — only synthetic samples should be committed
+sample_data/*_raw.csv
+sample_data/*_2024*.csv
+sample_data/*_2025*.csv
 
 # Google Cloud credentials
 *.json
