@@ -1,0 +1,55 @@
+# Cursor Instructions — ETL Pipeline
+
+> RoofLink ETL Pipeline — Data Engineering
+> Stack: Python, pandas, Jupyter, Google BigQuery
+
+## Project Context
+Production ETL pipeline for processing RoofLink CSV exports. Cleans, validates, and loads data into BigQuery.
+
+## Tech Stack Rules
+- Python 3.8+ with pandas and NumPy
+- Jupyter notebook for interactive mode, `etl_pipeline_logic.py` for library
+- BigQuery integration via `google-cloud-bigquery`
+- Tests in `tests/` using pytest
+
+## Code Standards
+- All data processing in pure functions (input DataFrame → output DataFrame)
+- Never modify DataFrames in place — always return new copies
+- Every cleaning step logged with before/after row counts
+- Sample data must be synthetic — NEVER commit real customer data
+- Schema validation before every BigQuery upload
+
+---
+
+## Cardinal Rules
+
+### No Partial Implementations
+Never add placeholder implementations, TODO stubs, mock-only features, or partial code that doesn't work end-to-end. Every change must be complete, tested, and production-safe.
+
+- No `// TODO: implement later` stubs that ship
+- No fake API calls that return hardcoded data pretending to be real
+- No "skeleton" functions that silently do nothing
+- No commented-out blocks left as "future work"
+- If a feature isn't ready, don't merge it. Period.
+
+### Never Half-Do It
+Every PR must leave the codebase in a working state. If you start a feature, finish it or revert. No partial migrations, no half-wired routes, no UI that links to nothing.
+
+### Never Be Unsafe
+- NEVER commit secrets, API keys, tokens, or passwords to code
+- All secrets go in `.env` files (which are gitignored)
+- Use `.env.example` as the template with placeholder values
+- Validate all user input — never trust client data
+- Use parameterized queries — never concatenate SQL strings
+
+### Always Build and Pass All Tests
+- Run the full test suite before every commit
+- If tests break, fix them before pushing — never push broken tests
+- If adding a feature, add tests for that feature
+- CI must pass before merge — no exceptions, no "I'll fix it later"
+
+### Version Discipline
+- Follow semantic versioning (MAJOR.MINOR.PATCH)
+- Every release gets a git tag and GitHub Release
+- ROADMAP.md is the source of truth for what each version delivers
+- Never skip versions or release out of order
