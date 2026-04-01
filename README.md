@@ -109,3 +109,9 @@ python -m pytest tests/test_bigquery_integration.py -v
 ---
 
 *This project demonstrates proficiency in data engineering, cloud platforms, and automated data processing workflows.*
+
+---
+
+## AI-Assisted Development
+
+This project uses AI-assisted development tools including [Cursor](https://cursor.com), [Claude Code](https://claude.ai), and [GitHub Copilot](https://github.com/features/copilot). All AI-generated code is reviewed by the maintainer before merge. See `AGENTS.md` for AI agent rules and constraints.
